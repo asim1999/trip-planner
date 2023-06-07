@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:trip_planner/provider/models/trip_activity.dart';
 import 'package:trip_planner/provider/trip_provider.dart';
 
-
 class TripActivityCard extends StatelessWidget {
   final String tripId;
   final TripActivity tripActivity;
@@ -21,15 +20,19 @@ class TripActivityCard extends StatelessWidget {
           color: Colors.red,
         ),
         //Delete trip on swipe
-        onDismissed: (direction) => tripProvider.deleteTripActivity(tripId,tripActivity.id),
+        onDismissed: (direction) =>
+            tripProvider.deleteTripActivity(tripId, tripActivity.id),
         child: Card(
           child: CheckboxListTile(
             value: tripActivity.isComplete,
             onChanged: (value) {
-              if(value == true){
-
-              }else{
-            } },
+              if (value == true) {
+                tripProvider.markTripActivityComplete(tripId, tripActivity.id);
+              } else {
+                tripProvider.markTripActivityIncomplete(
+                    tripId, tripActivity.id);
+              }
+            },
             title: Text(tripActivity.description),
             //Start and end date
           ),
