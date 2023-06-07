@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:trip_planner/forms/add_trip.dart';
 import 'package:trip_planner/provider/trip_provider.dart';
 import 'package:trip_planner/widgets/screens/home/trip_card.dart';
 
@@ -11,8 +12,20 @@ class Home extends StatelessWidget {
     return Consumer<TripProvider>(
       builder: (context, tripProvider, child) => Scaffold(
         appBar: AppBar(
-          title: Text('Trip Planner'),
-          centerTitle: true,
+          title: const Text('Trip Planner'),
+          actions: [
+            //  Add Button
+            TextButton.icon(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AddTrip(),
+                ),
+              ),
+              icon: const Icon(Icons.add),
+              label: const Text('Add'),
+            ),
+          ],
         ),
         body: ListView.builder(
           itemCount: tripProvider.trips.length,
