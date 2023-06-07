@@ -1,6 +1,6 @@
 import 'package:trip_planner/provider/models/trip_activity.dart';
 
-class Trip{
+class Trip {
   final String _id;
   final String _country;
   final DateTime _startDate;
@@ -19,21 +19,19 @@ class Trip{
 
   List<TripActivity> get activities => _activities;
 
-  addActivity(TripActivity newActivity){
+  addActivity(TripActivity newActivity) {
     _activities.add(newActivity);
   }
 
-  deleteActivity(String id){
+  deleteActivity(String id) {
     _activities.removeWhere((element) => element.id == id);
   }
 
-  markActivityComplete(String id){
-    _activities.singleWhere((element) => element.id).isComplete = true;
+  markActivityComplete(String id) {
+    _activities.singleWhere((element) => element.id == id).isComplete = true;
   }
 
-  markActivityIncomplete(String id){
-    markActivityComplete(String id){
-      _activities.singleWhere((element) => element.id).isComplete = false;
-    }
+  markActivityIncomplete(String id) {
+    _activities.singleWhere((element) => element.id == id).isComplete = false;
   }
 }
