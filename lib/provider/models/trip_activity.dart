@@ -6,7 +6,7 @@ class TripActivity{
   final String _description;
   bool _isComplete = false;
 
-  TripActivity(this._id, this._tripId, this._description, this._isComplete);
+  TripActivity(this._id, this._tripId, this._description);
 
   bool get isComplete => _isComplete;
 

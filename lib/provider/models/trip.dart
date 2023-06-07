@@ -23,7 +23,7 @@ class Trip{
     _activities.add(newActivity);
   }
 
-  removeActivity(String id){
+  deleteActivity(String id){
     _activities.removeWhere((element) => element.id == id);
   }
 }
