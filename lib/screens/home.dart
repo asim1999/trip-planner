@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
             //  Add Button
             TextButton.icon(
               style: TextButton.styleFrom(
-                primary: Colors.white,
+                foregroundColor: Colors.white,
               ),
               onPressed: () => Navigator.push(
                 context,
@@ -30,11 +30,18 @@ class Home extends StatelessWidget {
             ),
           ],
         ),
-        body: ListView.builder(
+        body: tripProvider.trips.isNotEmpty ? ListView.builder(
+          padding: const EdgeInsets.only(
+            top: 4,
+            left: 20,
+            right: 20,
+          ),
           itemCount: tripProvider.trips.length,
           itemBuilder: (context, index) => TripCard(
             tripProvider.trips[index],
           ),
+        ) : const Center(
+          child: Text('Add a trip'),
         ),
       ),
     );
