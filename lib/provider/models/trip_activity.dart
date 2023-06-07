@@ -2,11 +2,10 @@
 
 class TripActivity{
   final String _id;
-  final String _tripId;
   final String _description;
   bool _isComplete = false;
 
-  TripActivity(this._id, this._tripId, this._description);
+  TripActivity(this._id, this._description);
 
   bool get isComplete => _isComplete;
 
@@ -15,8 +14,6 @@ class TripActivity{
   }
 
   String get description => _description;
-
-  String get tripId => _tripId;
 
   String get id => _id;
 
