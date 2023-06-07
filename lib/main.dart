@@ -59,11 +59,6 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         )),
-        textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.white,
-          ),
-        ),
         primarySwatch: Colors.blue,
       ),
       home: const Home(),

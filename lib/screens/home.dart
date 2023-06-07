@@ -16,6 +16,9 @@ class Home extends StatelessWidget {
           actions: [
             //  Add Button
             TextButton.icon(
+              style: TextButton.styleFrom(
+                primary: Colors.white,
+              ),
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
