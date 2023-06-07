@@ -44,6 +44,8 @@ dependencies:
   form_builder_validators: ^9.0.0
   # REST API handling
   http: ^1.0.0
+  # Date formatting
+  intl: 0.18.0
 
 dev_dependencies:
   flutter_test:
