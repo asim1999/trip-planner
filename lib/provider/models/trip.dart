@@ -26,4 +26,14 @@ class Trip{
   deleteActivity(String id){
     _activities.removeWhere((element) => element.id == id);
   }
+
+  markActivityComplete(String id){
+    _activities.singleWhere((element) => element.id).isComplete = true;
+  }
+
+  markActivityIncomplete(String id){
+    markActivityComplete(String id){
+      _activities.singleWhere((element) => element.id).isComplete = false;
+    }
+  }
 }
