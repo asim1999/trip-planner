@@ -54,7 +54,6 @@ class TripProvider extends ChangeNotifier {
     //  Add to list
     getTrip(id).addActivity(TripActivity(
       id,
-      tripId,
       description,
     ));
     //Update UI

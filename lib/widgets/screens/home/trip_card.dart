@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:trip_planner/provider/trip_provider.dart';
+import 'package:trip_planner/screens/trip_activities.dart';
 
 import '../../../provider/models/trip.dart';
 
@@ -24,6 +25,11 @@ class TripCard extends StatelessWidget {
         onDismissed: (direction) => tripProvider.deleteTrip(trip.id),
         child: Card(
           child: ListTile(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TripActivities(tripId: trip.id),
+                )),
             //Leading trip activities count
             leading: Text('${tripProvider.getTripActivities(trip.id).length}'),
             title: Text(trip.country),
@@ -32,7 +38,8 @@ class TripCard extends StatelessWidget {
               //Column starts on the left
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Start: ${DateFormat('dd/MM/yyyy').format(trip.startDate)}'),
+                Text(
+                    'Start: ${DateFormat('dd/MM/yyyy').format(trip.startDate)}'),
                 Text('End: ${DateFormat('dd/MM/yyyy').format(trip.endDate)}'),
               ],
             ),
