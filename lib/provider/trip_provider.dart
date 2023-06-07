@@ -52,7 +52,7 @@ class TripProvider extends ChangeNotifier {
     //    //  Create ID
     final id = _uuid.v4();
     //  Add to list
-    getTrip(id).addActivity(TripActivity(
+    getTrip(tripId).addActivity(TripActivity(
       id,
       description,
     ));
