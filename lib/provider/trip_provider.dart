@@ -60,8 +60,20 @@ class TripProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+//  Mark trip activity complete
+  markTripActivityComplete(String tripId, String activityId) {
+    getTrip(tripId).markActivityComplete(activityId);
+    notifyListeners();
+  }
+
+//  Mark trip activity incomplete
+  markTripActivityIncomplete(String tripId, String activityId) {
+    getTrip(tripId).markActivityIncomplete(activityId);
+    notifyListeners();
+  }
+
 //Delete trip activity
-  deleteTripActivity(String tripId,String activityId){
+  deleteTripActivity(String tripId, String activityId) {
     //Delete the activity in this trip by its id
     getTrip(tripId).deleteActivity(activityId);
     //Update UI
