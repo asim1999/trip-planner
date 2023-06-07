@@ -1,8 +1,11 @@
+import 'package:trip_planner/provider/models/trip_activity.dart';
+
 class Trip{
   final String _id;
   final String _country;
   final DateTime _startDate;
   final DateTime _endDate;
+  List<TripActivity> _activities;
 
   Trip(this._id, this._country, this._startDate, this._endDate);
 
@@ -13,4 +16,14 @@ class Trip{
   String get country => _country;
 
   String get id => _id;
+
+  List<TripActivity> get activities => _activities;
+
+  addActivity(TripActivity newActivity){
+    _activities.add(newActivity);
+  }
+
+  removeActivity(String id){
+    _activities.removeWhere((element) => element.id == id);
+  }
 }
