@@ -27,7 +27,7 @@ class _AddTripState extends State<AddTrip> {
     final response =
         await http.get(Uri.parse('https://restcountries.com/v3.1/all'));
     //  Get the json data
-    List<Map<String, dynamic>> data = jsonDecode(response.body);
+    List data = jsonDecode(response.body);
     //  Map the array to a list of country strings
     List<String> countries =
         data.map((e) => e['name']['common'] as String).toList();
