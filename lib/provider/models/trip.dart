@@ -5,7 +5,7 @@ class Trip{
   final String _country;
   final DateTime _startDate;
   final DateTime _endDate;
-  List<TripActivity> _activities;
+  final List<TripActivity> _activities = [];
 
   Trip(this._id, this._country, this._startDate, this._endDate);
 
